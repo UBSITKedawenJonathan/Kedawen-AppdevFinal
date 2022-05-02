@@ -1,0 +1,21 @@
+<table class="table table-hover" *ngIf="selectedItem">
+    <thead>
+      <tr>
+        <th scope="col">Hiram title</th>
+        <th scope="col">Hiram Description</th>
+        <th scope="col">Hiram Kay</th>
+        <th scope="col">Max Hiram</th>
+        <th scope="col">Max Interest</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-active">
+        <th scope="row">{{selectedItem.name}}</th>
+        <td>{{selectedItem.description}}</td>
+        <td>{{selectedItem.seller}}</td>
+        <td>{{selectedItem.max}}</td>
+        <td>{{selectedItem.interest}}%</td>
+        <td><button routerLink="/contactseller/{{selectedItem.sellerid}}">Contact {{selectedItem.seller}}</button></td>
+        <!-- <td><button routerLink="/contactseller/{{selectedItem.sellerid}}">Contact {{selectedItem.seller}}</button></td> -->
+      </tr>
