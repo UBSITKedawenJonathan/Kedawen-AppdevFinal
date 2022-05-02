@@ -12,7 +12,7 @@ export class ContactSellerComponent implements OnInit {
 
   items= ITEMS;
 
-  selectedItem?: Item;
+  selectedItems?: Item;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,7 +20,7 @@ export class ContactSellerComponent implements OnInit {
 
   ngOnInit(): void {
     const id=this.route.snapshot.paramMap.get('id');
-    this.selectedItem = ITEMS.find(selectedItem => selectedItem.id === id);
+    this.selectedItems = ITEMS.find(selectedItems => selectedItems.id === id);
   }
 
 }

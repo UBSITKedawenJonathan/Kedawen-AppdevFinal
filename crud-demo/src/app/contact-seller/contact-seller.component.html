@@ -1,8 +1,8 @@
-<div class="card mb-3" *ngIf="selectedItem">
+<div class="card mb-3" *ngIf="selectedItems">
     <h3 class="card-header">Contact Seller</h3>
     <div class="card-body">
       <h5 class="card-title">Message</h5>
-      Message {{selectedItem.seller}} about {{selectedItem.name}}
+      Message {{selectedItems.seller}} about {{selectedItems.name}}
     </div>
     <h3>Hi I am</h3>
     <div class="form-group">
@@ -20,4 +20,4 @@
       <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="btn btn-primary">Submit</button>
