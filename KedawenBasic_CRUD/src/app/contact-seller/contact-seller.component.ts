@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ITEMS } from '../loan-listing';
-import { Item } from '../loan';
-import { MyItemsComponent } from '../my-items/my-items.component';
+import { ITEMS } from 'src/item-listing';
+import { Item } from 'src/items';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

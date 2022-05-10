@@ -4,7 +4,7 @@ export interface Item{
     name:string;
     seller:string;
     description:string;
-    max:number;
-    interest:number;
+    price:number;
+    ML:number;
     pic:string;
   }

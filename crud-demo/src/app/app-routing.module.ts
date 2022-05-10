@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ViewListsComponent}from './view-lists/view-lists.component';
-import {ContactSellerComponent}from './contact-seller/contact-seller.component';
+import { ViewListsComponent }from './view-lists/view-lists.component';
+import { ContactSellerComponent }from './contact-seller/contact-seller.component';
 import { EditItemComponent } from './edit-item/edit-item.component';
 import { ViewDetailsComponent } from './view-details/view-details.component';
 import { MyItemsComponent } from './my-items/my-items.component';

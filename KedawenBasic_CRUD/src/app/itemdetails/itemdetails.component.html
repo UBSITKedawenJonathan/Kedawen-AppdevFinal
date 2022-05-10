@@ -1,0 +1,22 @@
+<table class="table table-hover" *ngIf="selectedItem">
+    <thead>
+      <tr>
+        <th scope="col">Refreshments</th>
+        <th scope="col">Drink Description</th>
+        <th scope="col">Seller</th>
+        <th scope="col">Price</th>
+        <th scope="col">Milliliters</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-active">
+        <th scope="row">{{selectedItem.name}}</th>
+        <td>{{selectedItem.description}}</td>
+        <td>{{selectedItem.seller}}</td>
+        <td>{{selectedItem.price}}</td>
+        <td>{{selectedItem.ML}}</td>
+        <td><button routerLink="/contactseller/{{selectedItem.sellerid}}">Contact {{selectedItem.seller}}</button></td>
+      </tr>
+      <img src={{selectedItem.pic}} width="600" height="400">
+      
