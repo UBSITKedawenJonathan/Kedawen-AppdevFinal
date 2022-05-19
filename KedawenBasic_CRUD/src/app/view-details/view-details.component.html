@@ -1,0 +1,144 @@
+<section class="get-in-touch" *ngIf="item">
+<div class="container">
+	<span class="list-group">
+		<div class="card bg-light mb-3">
+			<div class="card-header ">Item ID: {{item.id}}</div>
+			<div class="card-body">
+				<h3 class="animate-charcter">{{item.pname}}
+					<img src={{item.pic}} width="500" height="400">
+					<input type="text" class="form-control" id="inputpn" [(ngModel)]="item.pname">
+				</h3>
+				<h4 class="card-title text-dark" >₱ {{item.pprice}}
+					<input type="text" class="form-control" id="inputpn" [(ngModel)]="item.pprice">
+				</h4>
+				<ul class="list-group">
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+						<label class="col-sm-2 col-form-label">Item Type</label>
+						<input type="text" class="form-control" id="inputtype" placeholder="Item Type" [(ngModel)]="item.type">
+					
+						<label class="col-sm-2 col-form-label">Stock: </label>
+						<input type="text" class="form-control" id="inputstock" placeholder="stocks" [(ngModel)]="item.stock">
+					</li>
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+						<label class="col-sm-2 col-form-label">Seller's FirstName</label> 
+						<input type="text" class="form-control" id="inputfn" placeholder="First name" [(ngModel)]="item.fname">
+						<label class="col-sm-2 col-form-label">  Seller's LastName</label> 
+						<input type="text" class="form-control" id="inputln" placeholder="Last name" [(ngModel)]="item.lname">
+					</li>
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+						<label class="col-sm-2 cp;-form-label">Email</label>
+						<input type="text" class="form-control" id="inputemail" placeholder="Email" [(ngModel)]="item.email">
+						<label class="col-sm-2 cp;-form-label">Mobile Number</label>
+						<input type="text" class="form-control" id="inputmob" placeholder="Mobile number" [(ngModel)]="item.mobnum">
+					</li>
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+						<label for="inputdob" class="col-sm-2 cp;-form-label">Birth Date</label>
+						<input type="date" class="form-control" id="inputdob" [(ngModel)]="item.dob">
+					</li>
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+						<label for="inputtel" class="col-sm-6 col-form-label"></label>
+						<button type="button" class="col-sm-2 btn btn-success"(click)="save()">Save</button>
+					</li>
+					
+				</ul>
+				<a routerLink="/viewlists" class="card-link text-dark">View List</a>
+				<a routerLink="/contactseller/{{item.id}}" class="card-link text-dark">Contact Seller</a>
+			</div>
+		</div>
+		
+	</span>
+
+	
+</div>
+</section>
+
+<!--
+<div class="container">
+<hr>
+<div class="card">
+	<div class="row">
+		<aside class="col-sm-5 border-right">
+<article class="gallery-wrap"> 
+<div class="img-big-wrap">
+  <div> <a href="#"><img src=""></a></div>
+</div> 
+<div class="img-small-wrap">
+  <div class="item-gallery"> <img src=""> </div>
+  <div class="item-gallery"> <img src=""> </div>
+  <div class="item-gallery"> <img src=""> </div>
+  <div class="item-gallery"> <img src=""> </div>
+</div>
+</article> 
+		</aside>
+		<aside class="col-sm-7">
+<article class="card-body p-5">
+	<h3 class="title mb-3">Original Version of Some product name</h3>
+
+<p class="price-detail-wrap"> 
+	<span class="price h3 text-warning"> 
+		<span class="currency">US $</span><span class="num">1299</span>
+	</span> 
+	<span>/per kg</span> 
+</p> 
+<dl class="item-property">
+  <dt>Description</dt>
+  <dd><p></p></dd>
+</dl>
+<dl class="param param-feature">
+  <dt>Model#</dt>
+  <dd></dd>
+</dl>  
+<dl class="param param-feature">
+  <dt>Color</dt>
+  <dd></dd>
+</dl>  
+<dl class="param param-feature">
+  <dt>Delivery</dt>
+  <dd></dd>
+</dl> 
+
+<hr>
+	<div class="row">
+		<div class="col-sm-5">
+			<dl class="param param-inline">
+			  <dt>Quantity: </dt>
+			  <dd>
+			  	<select class="form-control form-control-sm" style="width:70px;">
+			  		<option> 1 </option>
+			  		<option> 2 </option>
+			  		<option> 3 </option>
+			  	</select>
+			  </dd>
+			</dl>  
+		</div> 
+		<div class="col-sm-7">
+			<dl class="param param-inline">
+				  <dt>Size: </dt>
+				  <dd>
+				  	<label class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+					  <span class="form-check-label">SM</span>
+					</label>
+					<label class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+					  <span class="form-check-label">MD</span>
+					</label>
+					<label class="form-check form-check-inline">
+					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+					  <span class="form-check-label">XXL</span>
+					</label>
+				  </dd>
+			</dl>  
+		</div> 
+	</div> 
+	<hr>
+	<a href="#" class="btn btn-lg btn-primary text-uppercase"> Buy now </a>
+	<a href="#" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to cart </a>
+</article> 
+		</aside>
+	</div>
+</div> 
+
+
+</div>
+-->

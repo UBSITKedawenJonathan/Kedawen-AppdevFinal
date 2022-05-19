@@ -1,8 +1,13 @@
-<div class="card mb-3" *ngIf="selectedItems">
-    <h3 class="card-header">Contact Seller</h3>
-    <div class="card-body">
-      <h5 class="card-title">Message</h5>
-      Message <mark>{{selectedItems.seller}}</mark> about <mark>{{selectedItems.name}}</mark>
+<div class="container">
+<div class="jumbotron" *ngIf="item">
+    <section class="get-in-touch">
+    
+    <a routerLink="/viewlists" class="text-decoration-none">Back To View List</a>
+
+    <h1 class="title">Good Day!</h1>
+    
+    <div class="a">
+      <p class="lead">I want <a routerLink="/viewdetails/{{item.id}}" class="text-decoration-none">{{item.pname}}</a> with Product ID: <a routerLink="/viewdetails/{{item.id}}" class="text-decoration-none">{{item.id}}</a>.
     </div>
     <div class="form-group">
       <h3>Hi I am</h3>
@@ -19,5 +24,6 @@
       <label for="exampleTextarea" class="form-label mt-4"></label>
       <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
     </div>
-  </div>
-<button type="submit" class="btn btn-primary">Submit</button>
+    </section>
+    </div>
+</div>

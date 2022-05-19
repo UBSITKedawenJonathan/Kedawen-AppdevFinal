@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ITEMS } from 'src/item-listing';
-import { Item } from 'src/items';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Item } from '../item';
+import { ITEMS } from '../item-listings';
+import { UserService } from '../user.service';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-contact-seller',
@@ -10,17 +12,29 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ContactSellerComponent implements OnInit {
 
-  item= ITEMS;
+  /* items= ITEMS; */
+  @Input()item?:Item;
 
-  selectedItems?: Item;
+  selectItem?: Item;
+  onSelect(item:Item):void{
+    this.selectItem = item;
+  } 
 
   constructor(
     private route: ActivatedRoute,
+    private userService: UserService,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
-    const id=this.route.snapshot.paramMap.get('id');
-    this.selectedItems = ITEMS.find(selectedItems => selectedItems.id === id);
+    /* const id=this.route.snapshot.paramMap.get('id');
+    this.selectItem = ITEMS.find(selectedItem => selectItem.id === id); */
+    this.getItem();
+  }
+  getItem(): void{
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.userService.getItem(id)
+    .subscribe(item => this.item=item);
   }
 
 }

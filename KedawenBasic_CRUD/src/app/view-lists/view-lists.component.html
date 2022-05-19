@@ -1,0 +1,28 @@
+<section class="viewlist">
+<div class="container">
+  <form class="p-4 p-md-5 border rounded-3 bg-dark">
+    <div class="form-floating mb-3"><h3>Add Drinks</h3>
+      <input type="text" class="form-control" id="floatingInput" placeholder="Drink Name" #userEmail>
+      <label for="floatingInput"></label>
+    </div>
+    <button class="w=100 btn btn-lg btn-success" type="submit" (click)="add(userEmail.value); userEmail.value=''" >New Drink</button>
+  </form>
+  <br>
+  <div class="row">
+    <div *ngFor="let item of items" class="col-md-4">
+        <div class="card text-white bg-secondary mb-3">
+            <img src={{item.pic}}>
+            <div class="card-header text-center">{{item.pname}}
+                <div class="card-body">
+                    <h4 class="card-title">{{item.pprice}}</h4>
+                    <p class="card-text">{{item.type}}</p>
+                    <button type="button" class="w=100 btn btn-lg btn-success" routerLink="/viewdetails/{{item.id}}">View Details</button>
+          <button type="button" class="w=100 btn btn-lg btn-danger" (click)="delete(item)">Delete</button>
+                  </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+</section>
