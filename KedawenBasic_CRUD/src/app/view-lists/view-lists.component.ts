@@ -46,10 +46,10 @@ export class ViewListsComponent implements OnInit {
     this.selectItem = ITEMS.find(selectItem => selectItem.id === id); */
   }
 
-  add(email:string):void{
-    email=email.trim();
-    if(!email) {return;}
-    this.userService.addItem({ email } as Item)
+  add(pname:string):void{
+    pname=pname.trim(); 
+    if(!pname) {return;}
+    this.userService.addItem({ pname } as Item)
     .subscribe(item => {
       this.items.push(item);
     });

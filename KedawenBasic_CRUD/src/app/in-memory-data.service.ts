@@ -19,7 +19,7 @@ export class InMemoryDataService implements InMemoryDataService{
   }
 
   generateId(items: Item[]): number{
-    return items.length > 0 ? Math.max(...items.map(item => item.id)) + 1 : 1001; 
+    return items.length > 0 ? Math.max(...items.map(item => item.id)) + 1 : 1; 
   }
 
   constructor() { }
